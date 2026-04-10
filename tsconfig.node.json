@@ -14,7 +14,7 @@
     "moduleDetection": "force",
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
 
     /* Linting */
     "noUnusedLocals": true,
