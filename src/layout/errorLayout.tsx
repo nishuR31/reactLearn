@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-export default function HomeLayout() {
+export default function ErrorLayout() {
   return (
     <>
-      <Navbar />
       <Outlet />
       <Footer />
     </>

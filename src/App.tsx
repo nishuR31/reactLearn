@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { memo } from "react";
-
-import { Home, About, Members, Skills } from "./pages/home/index.tsx";
-
+import { ErrorPage } from "./pages/error";
+import { Home, About, Members, Skills } from "./pages/home";
+import { Signin, Signup, Forgot, TwoFA, Cache } from "./pages/auth";
+import { Contact, Privacy, Faqs, Uptime } from "./pages/form";
+import { HomeLayout, FormLayout, AuthLayout, ErrorLayout } from "./layout";
+import "./index.css";
 const App = memo(() => {
   return (
     <>
@@ -24,8 +27,11 @@ const App = memo(() => {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgot" element={<Forgot />} />
-            <Route path="/two-factor" element={<twoFA />} />
+            <Route path="/two-factor" element={<TwoFA />} />
             <Route path="/cache" element={<Cache />} />
+          </Route>
+          <Route element={<ErrorLayout />}>
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </Router>
