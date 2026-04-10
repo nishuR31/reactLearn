@@ -6,26 +6,44 @@ export function date() {
 }
 
 export default async function logEntry(msg: string) {
-  const filePath = path.join(process.cwd(), "logs/learn.json");
+  let currentDate = date();
+  const logsDir = path.join(process.cwd(), "logs");
+  const filePath = path.join(logsDir, "learn.json");
 
-  let data: Record<string, string> = {};
+  // Ensure logs directory exists
+  await fs.mkdir(logsDir, { recursive: true });
+
+  let data: Record<string, string>[] = [];
 
   try {
     const file = await fs.readFile(filePath, "utf-8");
     data = JSON.parse(file);
   } catch (err) {
     // file might not exist → start fresh
-    data = {};
+    // Only log error if it's not a file-not-found error
+    if (err.code && err.code !== "ENOENT") {
+      console.error(err);
+    }
   }
 
-  const newData = {
-    ...data,
-    [date()]: msg,
-  };
+  // Remove any duplicate entries for the current date
+  data = data.filter(
+    (dated) => !Object.prototype.hasOwnProperty.call(dated, currentDate),
+  );
 
-  await fs.writeFile(filePath, JSON.stringify(newData, null, 2), "utf-8");
+  // Check if the date exists in any entry (shouldn't after filter, but for safety)
+  let entry = data.find((dated) =>
+    Object.prototype.hasOwnProperty.call(dated, currentDate),
+  );
+  if (entry) {
+    entry[currentDate] = entry[currentDate] + "\n" + msg;
+  } else {
+    data.push({ [currentDate]: msg });
+  }
 
-  console.log("Saved:", newData);
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
+
+  console.log("Saved:", data);
 }
 
 // call
