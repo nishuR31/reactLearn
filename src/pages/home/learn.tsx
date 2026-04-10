@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const jsonData = async () => {
-  const res = await fetch("/file.json");
+  const res = await fetch("/learn.json");
   return res.json();
 };
 
