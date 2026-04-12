@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 export default function Home() {
-
   return (
     <main className="flex flex-col flex-wrap dark:bg-black dark:text-white text-black bg-white">
       <section>

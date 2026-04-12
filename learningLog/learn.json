@@ -1,0 +1,5 @@
+{
+  "13thApril": "getting started with react, initialize a basic vite proj",
+  "14thApril": "data fetching, useEffect, render with map, ts api, strong typing, react hooks(useState, memo, suspense), loading state, components, lazy loading, modular code,  ",
+  "15th april": "learned about components,lucide react and made some components"
+}
