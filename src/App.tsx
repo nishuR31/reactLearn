@@ -6,54 +6,53 @@ import "./index.css";
 
 // 🔥 HOME GROUP
 const Home = lazy(() =>
-  import("./pages/home").then((m) => ({ default: m.Home }))
+  import("./pages/home").then((m) => ({ default: m.Home })),
 );
 const About = lazy(() =>
-  import("./pages/home").then((m) => ({ default: m.About }))
+  import("./pages/home").then((m) => ({ default: m.About })),
 );
 const Members = lazy(() =>
-  import("./pages/home").then((m) => ({ default: m.Members }))
+  import("./pages/home").then((m) => ({ default: m.Members })),
 );
 const Skills = lazy(() =>
-  import("./pages/home").then((m) => ({ default: m.Skills }))
+  import("./pages/home").then((m) => ({ default: m.Skills })),
 );
 const Learn = lazy(() =>
-  import("./pages/home").then((m)=>({default:m.Learn})))
+  import("./pages/home").then((m) => ({ default: m.Learn })),
+);
 
 // 🔥 AUTH GROUP
 const Signin = lazy(() =>
-  import("./pages/auth").then((m) => ({ default: m.Signin }))
+  import("./pages/auth").then((m) => ({ default: m.Signin })),
 );
 const Signup = lazy(() =>
-  import("./pages/auth").then((m) => ({ default: m.Signup }))
+  import("./pages/auth").then((m) => ({ default: m.Signup })),
 );
 const Forgot = lazy(() =>
-  import("./pages/auth").then((m) => ({ default: m.Forgot }))
+  import("./pages/auth").then((m) => ({ default: m.Forgot })),
 );
 const TwoFA = lazy(() =>
-  import("./pages/auth").then((m) => ({ default: m.TwoFA }))
+  import("./pages/auth").then((m) => ({ default: m.TwoFA })),
 );
 const Cache = lazy(() =>
-  import("./pages/auth").then((m) => ({ default: m.Cache }))
+  import("./pages/auth").then((m) => ({ default: m.Cache })),
 );
 
 // 🔥 FORM GROUP
-const Contact = lazy(() =>
-  import("./pages/form").then((m) => ({ default: m.Contact }))
-);
+
 const Privacy = lazy(() =>
-  import("./pages/form").then((m) => ({ default: m.Privacy }))
+  import("./pages/form").then((m) => ({ default: m.Privacy })),
 );
 const Faqs = lazy(() =>
-  import("./pages/form").then((m) => ({ default: m.Faqs }))
+  import("./pages/form").then((m) => ({ default: m.Faqs })),
 );
 const Uptime = lazy(() =>
-  import("./pages/form").then((m) => ({ default: m.Uptime }))
+  import("./pages/form").then((m) => ({ default: m.Uptime })),
 );
 
 // 🔥 ERROR
 const ErrorPage = lazy(() =>
-  import("./pages/error").then((m) => ({ default: m.ErrorPage }))
+  import("./pages/error").then((m) => ({ default: m.ErrorPage })),
 );
 
 const App = memo(() => {
@@ -70,7 +69,6 @@ const App = memo(() => {
           </Route>
 
           <Route element={<FormLayout />}>
-            <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/uptime" element={<Uptime />} />

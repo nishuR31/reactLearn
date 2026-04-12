@@ -6,7 +6,6 @@ export default function HomeLayout() {
   return (
     <>
       <Navbar />
-      <p>This is layout code</p>
       <Outlet />
       <Footer />
     </>

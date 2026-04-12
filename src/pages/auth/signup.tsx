@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Signup() {
   return (
     <main>
@@ -21,22 +23,30 @@ export default function Signup() {
             <legend>Signup Form</legend>
 
             <p>
-              <label htmlFor="name">Full Name</label>
-              <br />
-              <input id="name" name="name" type="text" />
+              <input id="name" placeholder="name is?" name="name" type="text" />
             </p>
 
             <p>
-              <label htmlFor="email">Email</label>
-              <br />
-              <input id="email" name="email" type="email" />
+              <input
+                id="email"
+                placeholder="email@xyz.com"
+                name="email"
+                type="email"
+              />
             </p>
 
             <p>
-              <label htmlFor="password">Password</label>
-              <br />
-              <input id="password" name="password" type="password" />
+              <input
+                placeholder="********"
+                id="password"
+                name="password"
+                type="password"
+              />
             </p>
+            <div className="justify-around flex flex-wrap">
+              <Link to="/signin">Already an Member?</Link>
+              <Link to="/">Home?</Link>
+            </div>
 
             <button type="submit">Create Account</button>
           </fieldset>

@@ -1,4 +1,29 @@
+import Button from "../../components/ui/Button";
+
 export default function Cache() {
+  const PREFIX = "reactLearn:/";
+
+  const handleCache = () => {
+    if (typeof globalThis === "undefined" || !globalThis.localStorage) return;
+
+    const keys = Object.keys(localStorage || {});
+    const toRemove = keys.filter((k) => k.startsWith(PREFIX));
+
+    if (toRemove.length === 0) {
+      alert("No cached keys found for this app.");
+      return;
+    }
+
+    const ok = confirm(
+      `Delete ${toRemove.length} localStorage item(s) starting with "${PREFIX}"?`,
+    );
+    if (!ok) return;
+
+    toRemove.forEach((k) => localStorage.removeItem(k));
+    console.table(toRemove);
+    alert(`Removed ${toRemove.length} cached item(s).`);
+  };
+
   return (
     <main>
       <header>
@@ -36,6 +61,14 @@ export default function Cache() {
         <p>1. A page looks outdated after updates</p>
         <p>2. The site behaves unexpectedly</p>
         <p>3. You are troubleshooting loading issues</p>
+      </section>
+      <section>
+        <Button
+          icon="Trash"
+          text="Delete Cache"
+          variant="ghost"
+          onClick={handleCache}
+        />
       </section>
     </main>
   );

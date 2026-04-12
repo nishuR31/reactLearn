@@ -1,21 +1,18 @@
 import { Link } from "react-router-dom";
+import { Contact } from "./contact";
+import Button from "./ui/Button";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const year: number = new Date().getFullYear();
 
   return (
     <footer>
-      <section>
-        <h2>Site Footer</h2>
-        <p>Simple navigation links for quick access.</p>
-      </section>
+      <Link to="/">
+        <h2>React Learn</h2>
+      </Link>
 
       <nav aria-label="Footer navigation">
-        <h3>Quick Pages</h3>
         <div className="flex flex-wrap flex-row justify-around">
-          <p>
-            <Link to="/">Homepage</Link>
-          </p>
           <p>
             <Link to="/members">Members</Link>
           </p>
@@ -26,41 +23,27 @@ export default function Footer() {
             <Link to="/skills">Skills</Link>
           </p>
           <p>
-            <Link to="/signin">Signin</Link>
-          </p>
-          <p>
-            <Link to="/signup">Signup</Link>
-          </p>
-          <p>
-            <Link to="/forgot">Forgot</Link>
-          </p>
-          <p>
-            <Link to="/two-factor">TwoFA</Link>
-          </p>
-          <p>
-            <Link to="/cache">Cache</Link>
-          </p>
-          <p>
-            <Link to="/privacy">Privacy</Link>
-          </p>
-          <p>
-            <Link to="/uptime">Uptime</Link>
-          </p>
-          <p>
-            <Link to="/contact">Contact</Link>
+            <Link to="/privacy">Privacy Policy</Link>
           </p>
           <p>
             <Link to="/faqs">Faqs</Link>
           </p>
-          <p>
-            <Link to="/lol">Error</Link>
-          </p>
+        </div>
+        <div className="justify-self-center-safe">
+          <Contact />
         </div>
       </nav>
-
-      <section>
+      <div className="justify-around flex pt-2">
         <p>© {year} React Learn. All rights reserved.</p>
-      </section>
+        <p>Learnt and Made by Nishan and Nishant</p>
+        <div>
+          <Button
+            icon="ChevronUp"
+            variant="ghost"
+            onClick={() => globalThis.scrollTo({ top: 0, behavior: "smooth" })}
+          />
+        </div>
+      </div>
     </footer>
   );
 }

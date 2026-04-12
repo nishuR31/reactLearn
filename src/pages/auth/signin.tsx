@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Signin() {
   return (
     <main>
@@ -15,20 +17,30 @@ export default function Signin() {
       <section>
         <h2>Account Login</h2>
         <form>
-          <fieldset>
+          <fieldset className="text-center">
             <legend>Sign In Form</legend>
 
             <p>
-              <label htmlFor="email">Email</label>
-              <br />
-              <input id="email" name="email" type="email" />
+              <input
+                id="email"
+                placeholder="email@xyz.com"
+                name="email"
+                type="email"
+              />
             </p>
 
             <p>
-              <label htmlFor="password">Password</label>
-              <br />
-              <input id="password" name="password" type="password" />
+              <input
+                id="password"
+                placeholder="*******"
+                name="password"
+                type="password"
+              />
             </p>
+            <div className="justify-around flex flex-row">
+              <Link to="/forgot">Forgot Password?</Link>
+              <Link to="/signup">Register?</Link>
+            </div>
 
             <button type="submit">Sign In</button>
           </fieldset>

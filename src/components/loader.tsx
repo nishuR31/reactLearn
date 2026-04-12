@@ -1,7 +1,12 @@
-export default function Loader({ text = "Page" }) {
+import Icon from "./ui/Icon";
+
+export default function Loader({ text }: { readonly text: string }) {
   return (
-    <p className="animate-spin w-screen h-screen align-center text-error bg-success ">
-      Loading {text}
-    </p>
+    <div className=" min-w-screen min-h-screen place-content-center justify-center flex flex-col ">
+      <Icon name="LoaderPinwheel" />
+      <p className=" align-center  text-muted bg-transparent backdrop-blur-lg">
+        Loading {text} ...
+      </p>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar";
+import Button from "../components/ui/Button";
 
 export default function FormLayout() {
   return (
@@ -7,11 +8,21 @@ export default function FormLayout() {
       <Navbar />
       <Outlet />
       <div className="flex flex-row flex-wrap justify-around">
-        <button onClick={() => window.history.back()}>Back</button>
-        <button onClick={() => console.log((window.location.href = "/"))}>
-          Home
-        </button>
-        <button onClick={() => window.history.forward()}>Forward</button>
+        <Button
+          onClick={() => globalThis.history.back()}
+          text="Back"
+          icon="CornerUpLeft"
+        />
+        <Button
+          text="Home"
+          onClick={() => (globalThis.location.href = "/")}
+          icon="House"
+        />
+        <Button
+          text="Forward"
+          onClick={() => globalThis.history.forward()}
+          icon="CornerUpRight"
+        />
       </div>
     </>
   );

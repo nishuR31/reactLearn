@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Forgot() {
   return (
     <main>
@@ -20,11 +22,17 @@ export default function Forgot() {
             <legend>Forgot Password Form</legend>
 
             <p>
-              <label htmlFor="email">Email</label>
-              <br />
-              <input id="email" name="email" type="email" />
+              <input
+                placeholder="email@xyz.com"
+                id="email"
+                name="email"
+                type="email"
+              />
             </p>
-
+            <div className="justify-around flex flex-wrap">
+              <Link to="/two-factor">Other Way</Link>
+              <Link to="/signin">Remeber Password?</Link>
+            </div>
             <button type="submit">Send Reset Link</button>
           </fieldset>
         </form>
