@@ -18,7 +18,7 @@ export default async function logEntry(msg: string) {
   try {
     const file = await fs.readFile(filePath, "utf-8");
     data = JSON.parse(file);
-  } catch (err) {
+  } catch (err: any | Error) {
     // file might not exist → start fresh
     // Only log error if it's not a file-not-found error
     if (err.code && err.code !== "ENOENT") {
