@@ -32,7 +32,7 @@ export default async function logEntry(msg: string) {
   );
 
   // Check if the date exists in any entry (shouldn't after filter, but for safety)
-  let entry = data.find((dated) =>
+  const entry = data.find((dated) =>
     Object.prototype.hasOwnProperty.call(dated, currentDate),
   );
   if (entry) {
