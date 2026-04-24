@@ -1,5 +1,9 @@
 {
-  "13thApril": "getting started with react, initialize a basic vite proj",
-  "14thApril": "data fetching, useEffect, render with map, ts api, strong typing, react hooks(useState, memo, suspense), loading state, components, lazy loading, modular code,  ",
-  "15th april": "learned about components,lucide react and made some components"
+  "13thApril": "getting started with react",
+  "14thApril": "react basics",
+  "19th april": "learned about react syntaxes and scaffolding using vite",
+  "20th april": "learned about react hooks and their usage",
+  "21th april": "learned about components,lucide react and made some components",
+  "22th april": "learned more about react hooks and their usage, fixed the app and removed extra files",
+  "23th april": "made some components and editd and added in website for learning logs and syntaxes refinement"
 }
