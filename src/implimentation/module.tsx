@@ -1,7 +1,7 @@
 import { Toaster, toast } from "sonner";
 import axios from "axios";
 import { HomeIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type ModuleExample = {
   name: string;

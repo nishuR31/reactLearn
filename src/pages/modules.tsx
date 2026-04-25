@@ -1,5 +1,5 @@
 import { lazy } from "react";
-const Module = lazy(() => import("../implimentation/modules.tsx"));
+const Module = lazy(() => import("../implimentation/module.tsx"));
 
 export default function Modules() {
   return (
