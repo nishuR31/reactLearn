@@ -20,7 +20,7 @@ const importedHooks = [
 
 import { Link } from "react-router-dom";
 
-const hooks = memo(() => {
+const Hooks = memo(() => {
   //   const url = useLocation();
 
   const [date, setDate] = useState<string | null>(null);
@@ -134,7 +134,7 @@ const hooks = memo(() => {
   );
 });
 
-export default hooks;
+export default Hooks;
 
 //439
 // 80days

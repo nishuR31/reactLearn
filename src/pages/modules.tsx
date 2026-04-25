@@ -1,3 +1,6 @@
+import { lazy } from "react";
+const Module = lazy(() => import("../implimentation/modules.tsx"));
+
 export default function Modules() {
   return (
     <>
@@ -27,6 +30,7 @@ export default function Modules() {
           can do it manually too
         </p>
       </code>
+      <Module />
     </>
   );
 }
