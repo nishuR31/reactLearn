@@ -18,12 +18,13 @@ const importedHooks = [
   "useMemo",
 ];
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const hooks = memo(() => {
-  const { id } = useParams();
+  const url = useLocation();
 
   const [date, setDate] = useState<string | null>(null);
+  const [id, setId] = useState<number>(0);
   const [data, setData] = useState<unknown>(null);
   const [num, setNum] = useState<number>(0);
   const [isPending, startTransition] = useTransition();
@@ -48,10 +49,12 @@ const hooks = memo(() => {
   const [state, dispatch] = useReducer(reducer, { count: 0 });
 
   const apiCall = useCallback(
-    async (targetId: string) => {
+    async (targetId: number) => {
       if (!targetId) return;
 
-      const res = await fetch(targetId);
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/todos/${targetId}`,
+      );
       const responseData: unknown = await res.json();
       startTransition(() => setData(responseData));
     },
@@ -84,6 +87,9 @@ const hooks = memo(() => {
     setNum(Number(e.currentTarget.value) || 0);
   };
 
+  const handleId = (e: ChangeEvent<HTMLInputElement>) =>
+    setId(Number(e.currentTarget.value));
+
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date().toLocaleDateString());
@@ -113,10 +119,12 @@ const hooks = memo(() => {
       <button type="button" onClick={() => dispatch({ type: "decrement" })}>
         Decrement
       </button>
-      <button type="button" onClick={() => void apiCall(id ?? "")}>
-        Load route data
+      <input placeholder="Type id: 1,2,3..." onChange={handleId} />
+      <button type="button" onClick={() => void apiCall(id ?? 0)}>
+        Fetch
       </button>
       <p>{isPending ? "Loading..." : "Idle"}</p>
+      <code>{url}</code>
       <pre>{JSON.stringify(data, null, 2)}</pre>
 
       <p>Current route id: {id ?? "N/A"}</p>
