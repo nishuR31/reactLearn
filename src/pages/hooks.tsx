@@ -4,7 +4,7 @@ const HookImplimentation = lazy(() => import("../implimentation/hooks.tsx"));
 
 const hookConfig: Record<string, any> = {
   useState: {
-    use: "used to maintain state in functional compo,think like each memory of each function of component",
+    use: "it is used to maintain state in functional compo,think like each memory of each function of component",
     exmaple: "counters,colours,themes,etc",
     syntax: `import { useState } from 'react';
 const [state, setState] = useState(initialState);
