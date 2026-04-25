@@ -18,10 +18,10 @@ const importedHooks = [
   "useMemo",
 ];
 
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const hooks = memo(() => {
-  const url = useLocation();
+  //   const url = useLocation();
 
   const [date, setDate] = useState<string | null>(null);
   const [id, setId] = useState<number>(0);
@@ -124,7 +124,7 @@ const hooks = memo(() => {
         Fetch
       </button>
       <p>{isPending ? "Loading..." : "Idle"}</p>
-      <code>{url}</code>
+      {/* <code>{url}</code> */}
       <pre>{JSON.stringify(data, null, 2)}</pre>
 
       <p>Current route id: {id ?? "N/A"}</p>
