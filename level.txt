@@ -1,0 +1,19 @@
+React knowledge I know so far:
+
+- Functional components
+- Props
+- State with useState
+- Side effects with useEffect
+- Mutable refs with useRef
+- Memoized values with useMemo
+- Memoized functions with useCallback
+- Context with useContext
+- Complex state with useReducer
+- Transition updates with useTransition
+- Lazy loading with lazy and Suspense
+- Basic routing with react-router-dom
+- Fetching data with fetch and axios
+- Basic module usage like sonner, lucide-react, zod, and react-hook-form
+- Simple list rendering and event handling
+
+I am still learning and this file should only be used as React context for another AI.

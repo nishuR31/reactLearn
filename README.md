@@ -1,73 +1,31 @@
-# React + TypeScript + Vite
+# reactLearn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+reactLearn is a small React + TypeScript + Vite learning app. It is built to document and practice the React concepts I have learned so far, with a focus on hooks, reusable modules, and simple UI examples.
 
-Currently, two official plugins are available:
+## What this app does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Shows a hook reference page with explanations and syntax examples.
+- Shows a module reference page for useful packages like `sonner`, `lucide-react`, `axios`, `zod`, and `react-hook-form`.
+- Demonstrates lazy loading and `Suspense`.
+- Demonstrates common React state patterns such as `useState`, `useEffect`, `useMemo`, `useCallback`, `useReducer`, and `useTransition`.
+- Stores learning notes that can be shown later in the app.
 
-## React Compiler
+## Main pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/pages/hooks.tsx` - hook learning page.
+- `src/pages/modules.tsx` - module learning page.
+- `src/pages/learn.tsx` - learning log page.
+- `src/implimentation/hooks.tsx` - hook demo implementation.
+- `src/implimentation/modules.tsx` - module demo implementation.
 
-## Expanding the ESLint configuration
+## How it is made
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- React Router
+- ESLint
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Notes
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is for learning and reference, so the code focuses on showing how React features work rather than being a production app.
