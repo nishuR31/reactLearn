@@ -1,3 +1,7 @@
+import { lazy, Suspense } from "react";
+
+const HookImplimentation = lazy(() => import("../implimentation/hooks.tsx"));
+
 const hookConfig: Record<string, any> = {
   useState: {
     use: "used to maintain state in functional compo,think like each memory of each function of component",
@@ -68,7 +72,7 @@ let value=useContext(SomeContext);
 <div>{value}</div>
 `,
   },
-  
+
   useReducer: {
     use: "used to manage complex state logic in a component, it takes a reducer function and an initial state and returns the current state and a dispatch function to update the state,think of it like a more powerful useState or useState or steriods",
     example:
@@ -98,6 +102,11 @@ export default function Hooks() {
       {Object.keys(hookConfig).map((hook, id) => (
         <HookDetails key={id} hook={hook} id={id} />
       ))}
+      <div>
+        <Suspense fallback={"Loading the hook implementation"}>
+          <HookImplimentation />
+        </Suspense>
+      </div>
     </>
   );
 }
